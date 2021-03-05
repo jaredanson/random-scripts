@@ -1,0 +1,1 @@
+git branch | grep -v master > branches.txt && cat branches.txt | while read line; do   git checkout $line;   git push -d origin $line;   git checkout master;   git branch -D $line; sleep 2; done; rm branches.txt;
